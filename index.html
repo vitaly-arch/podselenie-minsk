@@ -350,12 +350,17 @@
     }
 
     function next() {
-        if (!canGo()) return;
+        if (!canGo()) {
+            tg.HapticFeedback.notificationOccurred('error');
+            return;
+        }
+        tg.HapticFeedback.impactOccurred('light');
         collect();
         if (cur < STEPS.length - 1) showStep(cur + 1);
     }
 
     function prev() {
+        tg.HapticFeedback.impactOccurred('light');
         if (cur > 0) showStep(cur - 1);
     }
 
@@ -379,12 +384,14 @@
         document.querySelectorAll(selector).forEach(c => c.classList.remove('selected'));
         el.classList.add('selected');
         form[key] = el.dataset.value;
+        tg.HapticFeedback.selectionChanged();
         updateBtn();
     }
 
     function changeAge(d) {
         const el = document.getElementById('ageDisplay');
         el.textContent = Math.max(16, Math.min(70, parseInt(el.textContent) + d));
+        tg.HapticFeedback.selectionChanged();
     }
 
     function updateCounter() {
@@ -433,6 +440,7 @@
     }
 
     function submit() {
+        tg.HapticFeedback.notificationOccurred('success');
         tg.MainButton.showProgress();
         tg.sendData(JSON.stringify(form));
     }

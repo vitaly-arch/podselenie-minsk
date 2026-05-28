@@ -363,7 +363,7 @@
         const isPreview = STEPS[cur] === 'preview';
         tg.MainButton.setText(isPreview ? '✓ Опубликовать' : 'Далее →');
         tg.MainButton.show();
-        if (canGo()) tg.MainButton.enable(); else tg.MainButton.disable();
+        tg.MainButton.enable();
     }
 
     function updateBackBtn() {

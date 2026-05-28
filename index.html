@@ -7,12 +7,12 @@
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <style>
         :root {
-            --bg: var(--tg-theme-bg-color, #ffffff);
-            --text: var(--tg-theme-text-color, #000000);
-            --hint: var(--tg-theme-hint-color, #8e8e93);
+            --bg: #ffffff;
+            --text: #1a1a1a;
+            --hint: #8e8e93;
             --btn: var(--tg-theme-button-color, #2481cc);
-            --btn-text: var(--tg-theme-button-text-color, #ffffff);
-            --secondary: var(--tg-theme-secondary-bg-color, #f2f2f7);
+            --btn-text: #ffffff;
+            --secondary: #f2f2f7;
         }
 
         * {
@@ -179,7 +179,7 @@
     <!-- Шаг 1: Тип -->
     <div class="step active" id="step-type">
         <div class="step-emoji">🏘️</div>
-        <h1 class="step-title">Кто ты?</h1>
+        <h1 class="step-title">С чего начнём?</h1>
         <p class="step-hint">Выбери свою ситуацию</p>
         <div class="type-cards">
             <div class="type-card" data-value="type_seek" onclick="selectCard(this, 'type', '.type-card')">
